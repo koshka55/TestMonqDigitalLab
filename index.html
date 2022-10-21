@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Monq Digital Lab</title>
+</head>
+
+<body data-theme="light">
+    <div class="content">
+        <header class="header">
+            <h1 class="header-title">Preferences</h1>
+            <h2 class="header-title-content">On this page you can configure the main system parameters available for
+                customization</h2>
+        </header>
+
+        <main class="content-wrapper">
+            <div class="field field-company-name">
+                <label class="field-label">
+                    Company Title
+                </label>
+                <input class="field-input" type="text" id="company-name" placeholder="Star and Moon" autofocus>
+            </div>
+            <div class="field field-week">
+                <label class="field-label">
+                    First Day
+                </label>
+                <div class="field-select-wrapper">
+                    <select class="field-input" id="first-day">
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field field-container-width">
+                <label class="field-label">
+                    Container Width
+                </label>
+                <div class="field-select-wrapper">
+                    <select class="field-input" id="container-width">
+                        <option value="fixed">Fixed</option>
+                        <option value="flex">Flex</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field field-homepage">
+                <label class="field-label">
+                    Homepage
+                </label>
+                <div class="field-select-wrapper">
+                    <select class="field-input" id="homepage">
+                        <option value="starred-projects">Starred Projects</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="field field-indent-size">
+                <label class="field-label">
+                    Indent Size
+                </label>
+                <input class="field-input" placeholder="Default" inputmode="numeric" id="indent-size">
+            </div>
+            <div class="field field-personal-code">
+                <label class="field-label">
+                    Personal Code
+                </label>
+                <input class="field-input personal-code-input" placeholder="1645" inputmode="numeric" maxlength="4" id="personal-code-1">
+                <span class="personal-code-span">-</span>
+                <input class="field-input personal-code-input" placeholder="1566" inputmode="numeric" maxlength="4" id="personal-code-2">
+                <span class="personal-code-span">-</span>
+                <input class="field-input personal-code-input" placeholder="1249" inputmode="numeric" maxlength="4" id="personal-code-3">
+            </div>
+            <div class="field-theme">
+                <span class="field-label">Theme</span>
+                <div class="field-radio-group">
+                    <div class="field-radio-container">
+                        <input type="radio" class="field-radio-button" checked name="theme-button-group" id="theme-light">
+                        <label class="field-radio-label" for="theme-light">
+                            Light
+                        </label>
+                    </div>
+                    <div class="field-radio-container">
+                        <input type="radio" class="field-radio-button" name="theme-button-group" id="theme-dark">
+                        <label class="field-radio-label" for="theme-dark">
+                            Dark
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-block">
+                <button class="button apply-button" id="apply-button">Apply and Save</button>
+                <button class="button cancel-button" id="cancel-button">Cancel</button>
+            </div>
+
+        </main>
+        <footer class="footer">
+            <div class="footer-text-container">
+                <span>2020-2022</span>
+                <a href="#">Terms of Service</a>
+                <span>and</span>
+                <a href="#">Conditions</a>
+            </div>
+            <div class="footer-image"></div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+:root{
+    --font-family: 'Ubuntu', 'Open Sans', sans-serif;
+    --font-size: 16px;
+}
+
+body[data-theme='light']{
+    --color-text-100: #F8F8F8;
+    --color-text-200: #DFDADA;
+    --color-text-300: #887C7C;
+    --color-text-500: #585050;
+    --color-text-800: #0B0A0A;
+    --color-primary-100: #AAC9F1;
+    --color-primary-500: #2A75DB;
+    --color-primary-700: #205EB0;
+    --color-secondary-500: #F8F8F8;
+    --color-secondary-700:#B0B5BD;
+    --body-color: #e5e5e5;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme='dark']{
+    --color-text-100: #1E1D1D;
+    --color-text-200: #585050;
+    --color-text-300: #887C7C;
+    --color-text-500: #DFDADA;
+    --color-text-800: #F3F3F3;
+    --color-primary-100: #F0F6FF;
+    --color-primary-500: #B9D5FC;
+    --color-primary-700: #AAC9F1;
+    --color-secondary-500: #424242;
+    --color-secondary-700:#0C0D0D;
+    --body-color: #0c0d0d;
+    --shadow-color: rgba(255, 255, 255, 0.2);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    padding: 0 232px;
+    background: var(--body-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+body, body * {
+    transition: .2s all ease-out;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--color-text-100);
+    padding: 32px 32px 0;
+}
+.content.flex{
+    flex: 1;
+    min-width: 986px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+.header-title{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--color-text-800);
+    margin: 0;
+}
+.header-title-content{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--color-text-500);
+    margin-top: 4px;
+}
+
+
+.content-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+}
+.field:not(:last-child){
+    margin-bottom: 24px;
+}
+
+.field-label{
+    min-width: 132px;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-text-500);
+}
+
+.field-input{
+    appearance: none;
+    outline: none;
+    font-family: inherit;
+
+    width: 196px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 6px;
+
+    color: var(--color-text-800);
+    caret-color: var(--color-text-800);
+    background: var(--color-text-200);
+    border: 1px solid var(--color-text-300);
+}
+.field-input:placeholder-shown {
+    color: var(--color-text-300);
+    background-color: var(--color-text-200);
+    border: 1px solid var(--color-text-300);
+}
+.field-input:hover {
+    box-shadow: inset 0px 0px 0px 100px var(--shadow-color);
+}
+.field-input:focus, .field-input:active {
+    border-color: var(--color-primary-500);
+}
+
+.field-select-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.field-select-wrapper::after {
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url('./images/select-arrow.svg');
+    background-position: center center;
+    left: calc(100% - 32px);
+    top: calc(50% - 12px);
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: rotateX(0);
+}
+
+.field-select-wrapper:focus-within::after {
+    transform: rotateX(0.5turn);
+}
+
+select.field-input {
+    cursor: pointer;
+}
+
+
+.field.field-personal-code {
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.field-personal-code::after {
+    content: '12 digits';
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 132px;
+    font-size: 11px;
+    line-height: 13px;
+    color: var(--color-text-300);
+}
+
+.personal-code-input{
+    width: 50px;
+}
+.personal-code-span{
+    margin: 0 8px;
+    color: var(--color-text-500);
+    user-select: none;
+}
+
+
+.field-theme{
+    display: flex;
+}
+.field-radio-group{
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-800);
+}
+.field-radio-container{
+    display: flex;
+    cursor: pointer;
+}
+.field-radio-container:not(:last-child) {
+    margin-bottom: 8px;
+}
+.field-radio-label{
+    margin-left: 7px;
+    font-size: 14px;    
+}
+.field-radio-button:not(:checked) + .field-radio-label {
+    color: var(--color-text-500);
+}
+
+
+.button-block{
+    display: flex;
+    align-items: center;
+    margin-top: 36px;
+    user-select: none;
+}
+
+.button-block > .button:not(:last-child) {
+    margin-right: 24px;
+}
+
+.button{
+    appearance: none;
+    outline: none;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 4px 8px;
+    border: none;       
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.button:hover {
+    box-shadow: inset 0px 0px 0px 100px var(--shadow-color);
+}
+.button:focus, .button:active {
+    border-color: var(--color-primary-100);
+}
+
+
+.apply-button{
+    width: 115px;
+    background: var(--color-primary-500);
+    color: var(--color-text-100);
+}
+
+.cancel-button{
+    width: 60px;
+    background: var(--color-secondary-500);
+    color: var(--color-primary-700);
+}
+.cancel-button:focus, .cancel-button:active {
+    border-color: var(--color-primary-500);
+}
+
+
+.footer{
+    display: flex;  
+    justify-content: center;   
+    align-items: flex-end;
+    align-self: center; 
+    height: 256px;
+    max-width: 1000px;
+    width: 100%;
+    background: url('images/image-footer.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 14px;
+    line-height: 17px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-500);
+    padding-bottom: 32px;
+}
+
+.footer-text-container {
+    display: flex;
+}
+
+.footer-text-container > *:not(:last-child) {
+    margin-right: 8px;
+}
+
+.footer-text-container > a {
+    text-decoration: none;
+    color: var(--color-primary-700);
+    position: relative;
+}
+
+.footer-text-container > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-primary-700);
+    opacity: 0.2;
+}
